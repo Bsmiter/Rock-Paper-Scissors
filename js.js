@@ -27,10 +27,11 @@ function userInput() {
     return userChoice;
 }
 function playGame() {
-    let computerSelection = computerChoice();
+
     let computerPoints = 0;
     let userPoints = 0;
     for (i = 0; i < 5; i++) {
+        let computerSelection = computerChoice();
         let userChoice = userInput();
         let score = playRound(userChoice, computerSelection);
         console.log(score);
