@@ -1,11 +1,9 @@
-let random = Math.floor(Math.random() * 3);
-function computerChoice(random) {
+function computerChoice() {
+    let random = Math.floor(Math.random() * 3);
     if (random == 0) { return "rock" };
     if (random == 1) { return "paper" };
     if (random == 2) { return "scissors" };
 }
-console.log(random);
-let computerSelection = computerChoice(random);
 function playRound(userChoice, computerSelection) {
     if (computerSelection === "rock") {
         if (userChoice === "rock") return "its a tie";
@@ -29,6 +27,7 @@ function userInput() {
     return userChoice;
 }
 function playGame() {
+    let computerSelection = computerChoice();
     let computerPoints = 0;
     let userPoints = 0;
     for (i = 0; i < 5; i++) {
@@ -37,11 +36,10 @@ function playGame() {
         console.log(score);
         if (score.includes("win")) { userPoints++ };
         if (score.includes("lose")) { computerPoints++ };
-        console.log(computerPoints);
     }
     if (computerPoints < userPoints) console.log(" you r the winner");
     if (computerPoints > userPoints) console.log("u r the loser");
-    if (computerPoints = userPoints) console.log("no one loses");
+    if (computerPoints == userPoints) console.log("no one loses");
     return;
 }
 playGame();
